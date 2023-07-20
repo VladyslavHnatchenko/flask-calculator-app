@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='calculator.css') }}">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form id="calculatorForm">
+        <input type="number" name="operand1" placeholder="Operand 1" required>
+        <select name="operator" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+        <input type="number" name="operand2" placeholder="Operand 2" required>
+        <button type="submit" id="calculateBtn">Count</button>
+    </form>
+    
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#calculatorForm').submit(function(e) {
+                e.preventDefault();
+
+                const formData = $(this).serialize();
+
+                $.ajax({
+                    url: '/calculate',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json', // Expect JSON response from the server
+                    success: function(data) {
+                        $('#result').text('Result = ' + data.result);
+                    },
+                    error: function(xhr, status, error) {
+                        $('#result').text('Error: ' + xhr.responseJSON.error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* static/calculator.css */
+
+body {
+  font-family: Futura;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator {
+  width: 600px;
+  height: 1000px;
+  margin: 50px auto;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#calculatorForm {
+  margin-bottom: 20px;
+}
+
+#calculatorForm input[type="number"],
+#calculatorForm select {
+  padding: 10px;
+  font-size: 18px;
+}
+
+#calculateBtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#calculateBtn:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
