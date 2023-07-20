@@ -19,4 +19,4 @@ docker run -it -p 5050:5050 -d flask-calculator-app
 ```
 
 Access the application in your web browser at http://0.0.0.0:5050/
-![Calculator](static/sd_s.jpg)
+![Calculator](src/static/sd_s.jpg)
