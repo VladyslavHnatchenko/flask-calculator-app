@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 functional_style/
 test_task/
+.DS_Store
